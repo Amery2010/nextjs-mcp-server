@@ -1,0 +1,64 @@
+{
+  "name": "nextjs-mcp-server",
+  "description": "MCP (Model Context Protocol) server for Next.js",
+  "version": "0.2.2",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amery2010/nextjs-mcp-server.git"
+  },
+  "keywords": [
+    "MCP server",
+    "MCP",
+    "Next.js"
+  ],
+  "sideEffects": false,
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "types": "./lib/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "default": "./lib/index.js"
+    },
+    "./mcp": {
+      "types": "./lib/mcp.d.ts",
+      "import": "./lib/mcp.js",
+      "default": "./lib/mcp.js"
+    },
+    "./sse": {
+      "types": "./lib/sse.d.ts",
+      "import": "./lib/sse.js",
+      "default": "./lib/sse.js"
+    },
+    "./streamableHttp": {
+      "types": "./lib/streamableHttp.d.ts",
+      "import": "./lib/streamableHttp.js",
+      "default": "./lib/streamableHttp.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rimraf './lib' && tsc"
+  },
+  "dependencies": {
+    "uuid": "^11.1.0",
+    "zod": "^3.24.4",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13",
+    "rimraf": "^6.0.1",
+    "typescript": "~5"
+  }
+}
